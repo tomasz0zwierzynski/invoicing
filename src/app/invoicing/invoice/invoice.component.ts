@@ -17,7 +17,7 @@ export class InvoiceComponent implements OnInit {
     this.invoice = {
       saleDate: new Date(),
       items: []
-    }
+    };
 
     this.invoiceSummary = this.recalculateSummery(this.invoice);
   }
@@ -30,7 +30,7 @@ export class InvoiceComponent implements OnInit {
       brutto: brutto,
       netto: netto,
       tax: this.round(brutto - netto, 2)
-    }
+    };
   }
 
   private round(price: number, digits: number): number {

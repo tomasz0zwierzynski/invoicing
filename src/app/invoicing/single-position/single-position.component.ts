@@ -61,8 +61,8 @@ export class SinglePositionComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.position.tax = Tax.t23
-    
+    this.position.tax = Tax.t23;
+
     this.searchResult.subscribe((items) => {
       this.suggestions = items;
     });

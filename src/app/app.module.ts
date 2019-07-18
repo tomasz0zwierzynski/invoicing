@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { InvoicingModule } from './invoicing/invoicing.module';
 import { HeroModule } from './hero/hero.module';
 import { NavbarComponent } from './layout/navbar/navbar.component';
+import { CustomersModule } from './customers/customers.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     InvoicingModule,
+    CustomersModule,
     HeroModule,
   ],
   providers: [],

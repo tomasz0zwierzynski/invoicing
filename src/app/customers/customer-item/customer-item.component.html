@@ -1,0 +1,17 @@
+<th scope="row">
+  {{no}}
+</th>
+<td>
+  <input class="form-control" type="text" name="firstname" [value]="item.firstname" [(ngModel)]="item.firstname"/>
+</td>
+<td>
+  <input class="form-control" type="text" name="lastname" [value]="item.lastname" [(ngModel)]="item.lastname"/>
+</td>
+<td>
+  <input class="form-control" type="text" name="taxid" [value]="item.taxId" [(ngModel)]="item.taxId"/>
+</td>
+<td>
+  <button (click)=removeItem()>
+    <i class="fa fa-trash"></i>
+  </button>
+</td>

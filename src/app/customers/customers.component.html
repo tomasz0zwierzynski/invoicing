@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">TaxID</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <app-customer-item
+      *ngFor="let item of items; let index = index"
+      [item]=item
+      [no]=index+1
+      (positionChanged)=handleItemChanged($event)
+      (itemRemoved)=removeItem($event)
+    ></app-customer-item>
+  </tbody>
+</table>
+<div class="invoice-positions__actions">
+  <button (click)="addItem()" type="button" class="btn btn-primary invoice-positions__action">
+    add position
+    <i class="fa fa-plus"></i>
+  </button>
+</div>
