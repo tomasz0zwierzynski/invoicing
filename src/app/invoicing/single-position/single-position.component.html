@@ -2,11 +2,12 @@
   {{lp}}
 </th>
 <td>
-  <input 
-    class="form-control" type="text" 
-    name="name" 
-    [value]=position.name 
-    (keyup)=handleAutocompleteName($event) 
+  <input
+    class="form-control" type="text"
+    name="name"
+    [(ngModel)]=position.name
+    (keyup)="handleAutocompleteName($event)"
+    (change)="handleChange()"
     autocomplete="off"
   />
   <ul class="single-position__suggestion-list" *ngIf="suggestions.length > 0">
@@ -14,10 +15,10 @@
   </ul>
 </td>
 <td>
-  <input class="form-control" type="number" name="quantity" [value]=position.quantity [(ngModel)]=position.quantity/>
+  <input class="form-control" type="number" name="quantity" [value]=position.quantity (change)="handleChange()" [(ngModel)]=position.quantity/>
 </td>
 <td>
-  <select class="form-control" name="unit" [value]=position.unit [(ngModel)]=position.unit>
+  <select class="form-control" name="unit" [value]=position.unit [(ngModel)]=position.unit (change)="handleChange()">
     <option *ngFor="let u of availableUnits" [value]=u>{{u}}</option>
   </select>
 </td>
@@ -28,7 +29,7 @@
       <span class="input-group-text">PLN</span>
     </div>
   </div>
-  
+
 </td>
 <td>
     <select [(ngModel)]=position.tax class="form-control" name="tax" [value]=position.tax (change)=handleChangeTax($event)>

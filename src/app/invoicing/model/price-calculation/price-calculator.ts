@@ -18,7 +18,7 @@ export class NotEnoughParamsError extends TypeError {
 
 export class PriceCalculator {
   calculate(calculationRequest: CalcRequest): ItemPrice {
-      if (calculationRequest.netto != null) {
+    if (calculationRequest.netto != null) {
         const gross = this.calculateGross(calculationRequest);
         const taxValue = gross - calculationRequest.netto;
         return {

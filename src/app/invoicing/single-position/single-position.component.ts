@@ -125,4 +125,9 @@ export class SinglePositionComponent implements OnInit {
     this.position.name = item.name;
     this.suggestions = [];
   }
+
+  handleChange(): void {
+    this.positionChanged.next(this.position);
+  }
+
 }

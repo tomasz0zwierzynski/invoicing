@@ -18,6 +18,9 @@ export class CustomerItemComponent implements OnInit {
   @Output()
   private itemRemoved: EventEmitter<CustomerItem> = new EventEmitter<CustomerItem>();
 
+  @Output()
+  private itemChanged: EventEmitter<CustomerItem> = new EventEmitter<CustomerItem>();
+
   constructor() { }
 
   ngOnInit() {
@@ -25,6 +28,11 @@ export class CustomerItemComponent implements OnInit {
 
   removeItem(): void {
     this.itemRemoved.next(this.item);
+  }
+
+  changed(): void {
+    this.itemChanged.next(this.item);
+    console.log(this.item);
   }
 
 }

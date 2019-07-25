@@ -7,6 +7,7 @@ import { InvoicingModule } from './invoicing/invoicing.module';
 import { HeroModule } from './hero/hero.module';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { CustomersModule } from './customers/customers.module';
+import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { CustomersModule } from './customers/customers.module';
     CustomersModule,
     HeroModule,
   ],
-  providers: [],
+  providers: [
+    StorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

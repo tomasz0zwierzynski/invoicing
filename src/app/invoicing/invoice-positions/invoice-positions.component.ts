@@ -25,6 +25,7 @@ export class InvoicePositionsComponent implements OnInit {
 
   addPosition(): void {
     this.positions.push(this.invoiceItemFactory.newInvoiceItem());
+    console.log('items changed');
     this.itemsChanged.next(this.positions);
   }
 

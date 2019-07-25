@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Invoice, InvoiceSummary } from '../model/item';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-invoice',
@@ -11,12 +12,14 @@ export class InvoiceComponent implements OnInit {
   invoice: Invoice;
   invoiceSummary: InvoiceSummary;
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit() {
+    console.log('ngOnInit');
+
     this.invoice = {
       saleDate: new Date(),
-      items: []
+      items: this.storageService.loadInvoices()
     };
 
     this.invoiceSummary = this.recalculateSummery(this.invoice);
@@ -39,6 +42,7 @@ export class InvoiceComponent implements OnInit {
 }
 
   updateItems(items) {
+    this.storageService.saveInvoices(items);
     this.invoiceSummary = this.recalculateSummery(this.invoice);
   }
 }

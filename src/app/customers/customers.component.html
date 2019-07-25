@@ -13,7 +13,7 @@
       *ngFor="let item of items; let index = index"
       [item]=item
       [no]=index+1
-      (positionChanged)=handleItemChanged($event)
+      (itemChanged)=handleItemChanged($event)
       (itemRemoved)=removeItem($event)
     ></app-customer-item>
   </tbody>
