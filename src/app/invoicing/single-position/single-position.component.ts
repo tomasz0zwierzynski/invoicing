@@ -5,6 +5,7 @@ import { ItemCatalog } from '../model/item-catalog/item-catalog';
 import { Subject } from 'rxjs';
 import { debounceTime, switchMap, tap, map, retry, filter } from 'rxjs/operators';
 import { Item } from '../model/item-catalog/item';
+import { CustomerItem } from 'src/app/customers/model/customer-item';
 
 interface ItemSuggestion {
   name: string;
@@ -20,6 +21,8 @@ export class SinglePositionComponent implements OnInit {
   readonly WAIT_TIME_BEFORE_SEARCH = 400;
   readonly MINIMAL_QUERY_LENGTH = 3;
 
+  @Input()
+  private customers: CustomerItem[];
   @Input()
   private position: InvoiceItem;
   @Input()
@@ -61,6 +64,8 @@ export class SinglePositionComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    console.log(this.customers);
+
     this.position.tax = Tax.t23;
 
     this.searchResult.subscribe((items) => {

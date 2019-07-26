@@ -1,3 +1,5 @@
+import { CustomerItem } from 'src/app/customers/model/customer-item';
+
 export interface InvoiceSummary {
     netto: number;
     brutto: number;
@@ -22,6 +24,7 @@ export interface InvoiceItem {
     unit?: Unit;
     netto?: number;
     tax?: Tax;
+    customer?: CustomerItem;
     brutto?: number;
 }
 

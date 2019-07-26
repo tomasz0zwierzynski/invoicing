@@ -8,6 +8,7 @@
         <th scope="col">netto</th>
         <th scope="col">tax</th>
         <th scope="col">gross</th>
+        <th scope="col">customer</th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -15,6 +16,7 @@
       <app-single-position
         *ngFor="let position of positions; let index = index"
         [position]=position
+        [customers]=customers
         [lp]=index+1
         (positionChanged)=handlePositionChanged($event)
         (itemRemoved)=removePosition($event)

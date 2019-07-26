@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { InvoiceItem, InvoiceItemFactory } from '../model/item';
+import { CustomerItem } from 'src/app/customers/model/customer-item';
 
 @Component({
   selector: 'app-invoice-positions',
@@ -10,6 +11,9 @@ export class InvoicePositionsComponent implements OnInit {
 
   @Input()
   private positions: InvoiceItem[];
+
+  @Input()
+  private customers: CustomerItem[];
 
   @Output()
   itemsChanged: EventEmitter<InvoiceItem[]> = new EventEmitter();

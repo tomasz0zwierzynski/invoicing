@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Invoice, InvoiceSummary } from '../model/item';
 import { StorageService } from '../../services/storage.service';
+import { CustomerItem } from 'src/app/customers/model/customer-item';
 
 @Component({
   selector: 'app-invoice',
@@ -12,10 +13,14 @@ export class InvoiceComponent implements OnInit {
   invoice: Invoice;
   invoiceSummary: InvoiceSummary;
 
+  customers: CustomerItem[];
+
   constructor(private storageService: StorageService) { }
 
   ngOnInit() {
     console.log('ngOnInit');
+
+    this.customers = this.storageService.loadCustomers();
 
     this.invoice = {
       saleDate: new Date(),
