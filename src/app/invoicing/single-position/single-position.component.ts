@@ -135,4 +135,16 @@ export class SinglePositionComponent implements OnInit {
     this.positionChanged.next(this.position);
   }
 
+  selectItem(): void {
+    this.positionChanged.next(this.position);
+  }
+
+  compareCustomer(o1, o2) {
+    if (o1 != null && o2 != null && o1 !== undefined && o2 !== undefined) {
+      return o1.id === o2.id;
+    } else {
+      return false;
+    }
+  }
+
 }

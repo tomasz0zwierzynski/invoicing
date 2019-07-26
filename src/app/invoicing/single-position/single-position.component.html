@@ -45,9 +45,9 @@
   </div>
 </td>
 <td>
-  
-
-
+  <select [compareWith]="compareCustomer" [(ngModel)]="position.customer" (ngModelChange)="selectItem($event)">
+    <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.lastname}} {{customer.firstname}} ({{customer.taxId}})</option>
+  </select>
 </td>
 <td>
   <button (click)=removePosition()>

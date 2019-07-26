@@ -50,6 +50,7 @@ export class InvoiceItemFactory {
             netto: null,
             tax: null,
             brutto: null,
+            customer: null
         };
     }
 }
