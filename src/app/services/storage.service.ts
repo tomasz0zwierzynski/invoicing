@@ -8,11 +8,11 @@ export class StorageService {
   constructor() { }
 
   saveCustomers(items): void {
-    localStorage.setItem('customers', JSON.stringify(items));
+    sessionStorage.setItem('customers', JSON.stringify(items));
   }
 
   loadCustomers(): Array<any> {
-    const fromStorage: any = localStorage.getItem('customers');
+    const fromStorage: any = sessionStorage.getItem('customers');
 
     let items: any = [];
     if ( fromStorage ) {
@@ -22,11 +22,11 @@ export class StorageService {
   }
 
   saveInvoices(items): void {
-    localStorage.setItem('invoices', JSON.stringify(items) );
+    sessionStorage.setItem('invoices', JSON.stringify(items) );
   }
 
   loadInvoices(): Array<any> {
-    const fromStorage: any = localStorage.getItem('invoices');
+    const fromStorage: any = sessionStorage.getItem('invoices');
 
     let items: any = [];
     if ( fromStorage ) {

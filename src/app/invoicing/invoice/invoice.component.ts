@@ -48,6 +48,7 @@ export class InvoiceComponent implements OnInit {
 
   updateItems(items) {
     this.storageService.saveInvoices(items);
+    this.invoice.items = items;
     this.invoiceSummary = this.recalculateSummery(this.invoice);
   }
 }
